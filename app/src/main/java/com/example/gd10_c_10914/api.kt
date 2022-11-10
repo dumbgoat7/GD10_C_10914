@@ -24,7 +24,7 @@ interface api {
     @FormUrlEncoded
     @PUT("mahasiswa/{mhsnobp}")
     fun updateData(
-        @Field("mhsnobp") mhsnobp: String?,
+        @Path("mhsnobp") mhsnobp: String?,
         @Field("mhsnama") mhsnama:String?,
         @Field("mhsalamat") mhsalamat:String?,
         @Field("prodinama") prodinama:String?,

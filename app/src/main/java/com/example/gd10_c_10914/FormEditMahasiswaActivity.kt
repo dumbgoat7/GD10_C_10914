@@ -44,13 +44,15 @@ class FormEditMahasiswaActivity : AppCompatActivity() {
                 val prodi = txtEditProdi.text.toString()
                 val tgllahir = tglEditView.text.toString()
 
-                RClient.instances.updateData(nim,nama,alamat,prodi,tgllahir).enqueue(object : Callback<ResponseCreate> {
+                RClient.instances.updateData(nim,nama,alamat,prodi,tgllahir).enqueue(object :
+                    Callback<ResponseCreate> {
                     override fun onResponse(
                         call: Call<ResponseCreate>,
                         response: Response<ResponseCreate>
                     ) {
                         if(response.isSuccessful) {
-                            Toast.makeText(applicationContext,"${response.body()?.pesan}",Toast.LENGTH_LONG).show()
+                            Toast.makeText(applicationContext,"${response.body()?.pesan}",
+                                Toast.LENGTH_LONG).show()
                             finish()
                         }
                     }
